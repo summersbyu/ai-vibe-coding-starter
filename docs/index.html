@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice Discount Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Accounts payable</p>
+      <h1>Invoice Discount Calculator</h1>
+      <p class="intro">Calculate how much to pay when an invoice qualifies for an early payment discount.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="inputs-heading">
+      <h2 id="inputs-heading">Invoice details</h2>
+      <form id="invoice-form" novalidate>
+        <div class="fields">
+          <label for="invoice-amount">Invoice amount in dollars
+            <input id="invoice-amount" name="invoice-amount" type="number" min="0.01" max="1000000" step="0.01" value="1000.00" inputmode="decimal" required aria-describedby="amount-hint">
+          </label>
+          <label for="discount-rate">Early payment discount percent
+            <input id="discount-rate" name="discount-rate" type="number" min="0" max="100" step="0.01" value="2.00" inputmode="decimal" required>
+          </label>
+        </div>
+        <p id="amount-hint" class="hint">Use a fictional invoice amount from $0.01 to $1,000,000.00.</p>
+        <button type="submit">Calculate payment</button>
+        <p id="error-message" class="error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section id="results" class="panel results" aria-labelledby="results-heading" aria-live="polite">
+      <h2 id="results-heading">Amount to pay with the discount</h2>
+      <p id="payment-amount" class="amount">$980.00</p>
+      <p class="hint">This assumes the invoice qualifies for the discount and payment is made within the allowed period.</p>
+      <div id="comparison"></div>
+    </section>
+
+    <section class="explanation" aria-labelledby="review-heading">
+      <h2 id="review-heading">Review the invoice terms</h2>
+      <p>A term such as 2/10 net 30 means a 2 percent discount is available when payment meets the 10 day deadline; otherwise the full amount is due within 30 days. This calculator checks the amount, not the payment date.</p>
+      <p>Confirm the invoice, eligibility, deadline, and approval before making a real payment. This page is a practice calculator and does not initiate payments.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+case,invoice_dollars,discount_percent,expected_savings_dollars,expected_payment_dollars
+standard,1000.00,2.00,20.00,980.00
+different_amount,250.00,2.00,5.00,245.00
+zero_discount,1000.00,0.00,0.00,1000.00
+rounding,99.99,2.00,2.00,97.99
+full_discount,1000.00,100.00,1000.00,0.00
